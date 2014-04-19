@@ -19,8 +19,18 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.post_install_message = <<-EOF
+  ___________             .__  .__             _________ __                    .___
+\__    __________  ____ |  | |  |   ____    /   ______/  |______    ____   __| ___ ________
+  |    |  \_  __ _/ __ \|  | |  |  /  _ \   \_____  \\   __\__  \  /    \ / __ |  |  \____ \
+  |    |   |  | \\  ___/|  |_|  |_(  <_> )  /        \|  |  / __ \|   |  / /_/ |  |  |  |_> >
+  |____|   |__|   \___  |____|____/\____/  /_______  /|__| (____  |___|  \____ |____/|   __/
+                      \/                           \/           \/     \/     \/     |__|
+ !    Thanks for installing Trello Standup Gem.
+  EOF
+
   spec.add_dependency "ruby-trello"
-  spec.add_dependency "trollop"
+  spec.add_dependency "launchy",     ">= 0.3.2" #A helper for launching cross-platform applications in a fire and forget manner
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"

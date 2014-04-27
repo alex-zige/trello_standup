@@ -4,7 +4,7 @@ require "trello_standup/command/base"
 #
 class TrelloStandup::Command::Help < TrelloStandup::Command::Base
 
-  PRIMARY_NAMESPACES = %w( auth addons config )
+  PRIMARY_NAMESPACES = %w( auth config generate )
 
   # help [COMMAND]
   #

@@ -19,6 +19,10 @@ module TrelloStandup
       $stdin.gets.to_s.strip
     end
 
+    def open_stdoutput_in_text_editor(stdout)
+      %x[echo "#{stdout}" | subl -w]
+    end
+
     def error(message)
       display("failed")
       $stderr.puts(format_with_bang(message))
@@ -63,8 +67,8 @@ module TrelloStandup
     end
 
     def styled_error(error, message='Trello Standup client internal error.')
-        display("failed")
-        $stderr.puts(format_error(error, message))
+      display("failed")
+      $stderr.puts(format_error(error, message))
     end
 
     def format_error(error, message='Trello client internal error.')
@@ -91,5 +95,6 @@ module TrelloStandup
       formatted_error.join("\n")
       end
     end
+
 
 end

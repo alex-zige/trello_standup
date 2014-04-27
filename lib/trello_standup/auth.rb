@@ -1,7 +1,7 @@
 require "trello_standup"
 require "trello_standup/helpers"
 require "cgi"
-require 'FileUtils'
+require 'fileutils'
 
 class TrelloStandup::Auth
   class << self

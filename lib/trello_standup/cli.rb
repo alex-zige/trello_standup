@@ -4,6 +4,7 @@ require "trello_standup/helpers"
 require "cgi"
 require "trello_standup/command"
 require "trello_standup/auth"
+require "trello_standup/trello"
 
 Trello.configure do |config|
   config.developer_public_key = "bb958efe971bcf0f5d0fa920c9b377b3"
@@ -34,20 +35,9 @@ class TrelloStandup::CLI
     exit(1)
   end
 
+
 end
 
-  #helpers
-  def self.card_is_completed(list_after_name)
-    list_after_name == "Done" ||list_after_name == "Ready for review"
-  end
 
-  def self.is_in_valid_date_range(date)
-    (1.day.ago.beginning_of_day <= date) && ( date <= Time.now.beginning_of_day)
-    # true
-  end
 
-  #open link
-  def open_oauth_link
-    "https://trello.com/1/authorize?key=bb958efe971bcf0f5d0fa920c9b377b3&name=Trello+Standup&expiration=never&response_type=token"
-  end
 end
